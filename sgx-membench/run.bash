@@ -3,6 +3,7 @@ DATE=`date +%Y.%m.%d_%H:%M:%S`
 FILE=$DATE.log
 touch $FILE
 for i in $SEQUENCE; do
-	echo "Memory size: $i"
-	target/debug/sgx-membench $i >> $FILE
+	mb=$(($i*1024*1024))
+	echo "Memory size: $mb"
+	target/debug/sgx-membench $mb >> $FILE
 done
