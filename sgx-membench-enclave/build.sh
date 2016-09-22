@@ -3,7 +3,7 @@
 set -e
 set -x
 
-cargo build-enclave -H 0x8000000 -S 0x20000
+cargo build-enclave -H 0x10000000 -S 0x20000
 
 pushd target/debug
 
