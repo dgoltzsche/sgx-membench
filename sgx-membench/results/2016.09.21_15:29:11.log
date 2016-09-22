@@ -1,0 +1,81 @@
+# mem_size=1 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+1048576 14034757671 3664118 56122297072 14436746976 3776960 57970941494
+# mem_size=2 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+2097152 14024721034 3638550 56855252647 14440786465 3778496 59405914910
+# mem_size=3 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+3145728 14005424558 3651831 57113802777 14430168293 6679224 63954382996
+# mem_size=4 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+4194304 14009250755 3916106 60442755114 14439703742 7167479 87216973767
+# mem_size=5 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+5242880 14028612442 5770779 76357151665 14408879213 10864783 120235134813
+# mem_size=6 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+6291456 14002768684 6313830 85701818342 14423757142 13366752 149661079886
+# mem_size=7 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+7340032 14027815327 6571450 91367888898 14447424022 16064380 172373185766
+# mem_size=8 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+8388608 14015106633 7805433 97905977250 14428368370 18889157 188739410358
+# mem_size=10 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+10485760 14014241080 7659560 109204578078 14442359218 19196685 210182147630
+# mem_size=12 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+12582912 14019912944 7405534 115581320356 14431113741 18872278 216319245504
+# mem_size=14 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+14680064 14012204210 7533861 119843340676 14452971353 19775866 207665121052
+# mem_size=16 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+16777216 14002624314 7991560 123800252768 14415171980 21080807 215441200874
+# mem_size=20 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+20971520 14020834823 8065504 129406095412 14431518209 21435526 223586950990
+# mem_size=24 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+25165824 13995015749 8178004 132129022296 14413541957 20701576 228134800145
+# mem_size=28 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+29360128 14018305104 7929156 133315638569 14441604413 20858851 233349648459
+# mem_size=32 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+33554432 14018929758 8314053 134716556857 14415659825 21394956 236192704638
+# mem_size=40 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+41943040 14028606220 8219069 137292817766 14444242089 21720180 238007937530
+# mem_size=48 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+50331648 14008407708 8284162 140629020444 14408217477 21499054 240943438946
+# mem_size=56 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+58720256 14008370333 8316067 141308087372 14426866431 22480224 242177279665
+# mem_size=64 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+67108864 13994683730 8284552 141948437832 14418154673 21814840 244194157348
+# mem_size=78 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+81788928 14005900694 8311307 143299165979 14442012479 21754919 247843226149
+# mem_size=92 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+96468992 14023193268 8426800 143634877549 14439073160 21867926 251519611938
+# mem_size=106 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+111149056 13992913592 8337706 144749855542 16402625005 1756837160 1336930923995
+# mem_size=128 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+134217728 13999835361 8333889 145445238874 16900703515 2100242015 2694726533815
+# mem_size=160 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+167772160 14010853389 8610169 145957697530 16729702087 2096836482 4013152308851
+# mem_size=192 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+201326592 13997641105 8329058 146559486686 16204386990 1583136870 4897042128450
+# mem_size=255 MiB NUM_RUNS=3
+# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise
+267386880 14004463056 8438230 148092224745 16786599063 2105806216 5954678726513
