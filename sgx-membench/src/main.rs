@@ -4,6 +4,7 @@ extern crate sgx_isa;
 extern crate enclave_interface;
 extern crate x86;
 extern crate number_prefix;
+extern crate time;
 
 pub mod logger;
 
@@ -14,7 +15,7 @@ use sgxs::loader::{Load, Map};
 use logger::Logger;
 use sgx_membench::bench::{mem_access_seq, mem_access_rand};
 use sgx_membench::Ecalls;
-use x86::bits64::time;
+//use x86::bits64::time;
 use std::io;
 use std::io::Write;
 use number_prefix::{binary_prefix, Standalone, Prefixed};
@@ -24,20 +25,22 @@ const NOOP_RUNS: u64 = 5; // was: 25
 const PAGE_SIZE: usize = 4096;
 const BUILT: &'static str = "debug";
 
+use time::PreciseTime;
 macro_rules! measure_avg {
     ($runs:ident, $f:stmt) => {{
         let mut duration : u64 = 0;
         for n in 1..($runs + 2) {
-            let start_time = unsafe { time::rdtscp() };
+            //let start_time = unsafe { time::rdtscp() };
+            let start = PreciseTime::now();
             //println!("calling f run={}", n);
             $f;
-            let stop_time = unsafe { time::rdtscp() };
+            let stop = PreciseTime::now();
+            //let stop_time = unsafe { time::rdtscp() };
             //println!("n={} time={}", n, stop_time - start_time);
             if n > 1 {
-                duration += stop_time - start_time;
+                duration += start.to(stop).num_milliseconds() as u64;
             }
         }
-        //println!("duration={}", duration);
         duration / $runs
     }}
 }
@@ -79,24 +82,25 @@ fn main() {
     //let mut msg_buf = [0u8; 255];    
     //let l = Logger::new(&mut msg_buf);    
                     
-    println!("# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise");
+    //println!("# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise");
+    println!("# mem_size out_rand_bytewise");// enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise");
     print!("{} ", mem_size);
     io::stdout().flush().unwrap();
 
     let a:Vec<u8> = vec![170u8; mem_size];
     
-    let time_out_seq_bytewise = measure_avg!(NUM_RUNS, mem_access_seq(&a, 1));
-    print!("{} ", time_out_seq_bytewise);
-    io::stdout().flush().unwrap();
+    //let time_out_seq_bytewise = measure_avg!(NUM_RUNS, mem_access_seq(&a, 1));
+    //print!("{} ", time_out_seq_bytewise);
+    //io::stdout().flush().unwrap();
 
-    let time_out_seq_pagewise = measure_avg!(NUM_RUNS, mem_access_seq(&a, PAGE_SIZE));
-    print!("{} ", time_out_seq_pagewise);
-    io::stdout().flush().unwrap();
+    //let time_out_seq_pagewise = measure_avg!(NUM_RUNS, mem_access_seq(&a, PAGE_SIZE));
+    //print!("{} ", time_out_seq_pagewise);
+    //io::stdout().flush().unwrap();
     
     let time_out_rand = measure_avg!(NUM_RUNS, mem_access_rand(&a));
     print!("{} ", time_out_rand);    
     io::stdout().flush().unwrap();
-                
+    /*                
     let ocall_handler = | nr, p1, _p2, _p3, _p4 | {
         //println!("Usercall: nr={} size={} {} {} {}", nr, p1, p2, p3, p4)
         match nr {
@@ -110,7 +114,7 @@ fn main() {
     //ecall(&mut mapping, &ocall_handler, Ecalls::LogInit as u64, l.get_raw_ptr(), 0, 0, 0);
   
     // no-op measurement
-    let time_avg_ecall_noop = measure_avg!(NOOP_RUNS, ecall(&mut mapping, &ocall_handler, Ecalls::NoOp as u64, 0, 0, 0, 0));
+    //let time_avg_ecall_noop = measure_avg!(NOOP_RUNS, ecall(&mut mapping, &ocall_handler, Ecalls::NoOp as u64, 0, 0, 0, 0));
     //println!("time_avg_ecall_noop={}", time_avg_ecall_noop);
         
     // init encl array
@@ -126,6 +130,6 @@ fn main() {
     
     let time_encl_rand_bytewise: u64 = measure_avg!(NUM_RUNS, ecall(&mut mapping, &ocall_handler, Ecalls::MemAccessRandBytewise as u64, a_ptr, mem_size as u64, 0, 0)).saturating_sub(time_avg_ecall_noop);
     println!("{}", time_encl_rand_bytewise);    
-        
+    */  
     drop(h);
 }
