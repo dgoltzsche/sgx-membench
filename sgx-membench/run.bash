@@ -5,5 +5,5 @@ touch $FILE
 for i in $SEQUENCE; do
 	mb=$(($i*1024*1024))
 	echo "Memory size: $mb"
-	target/debug/sgx-membench $mb >> $FILE
+	target/release/sgx-membench $mb >> $FILE
 done

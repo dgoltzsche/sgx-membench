@@ -83,7 +83,7 @@ fn main() {
     //let l = Logger::new(&mut msg_buf);    
                     
     //println!("# mem_size out_seq_bytewise out_seq_pagewise out_rand_bytewise enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise");
-    println!("# mem_size out_rand_bytewise");// enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise");
+    println!("# mem_size out_rand_bytewise enc_rand_bytewise");// enc_seq_bytewise enc_seq_pagewise enc_rand_bytewise");
     print!("{} ", mem_size);
     io::stdout().flush().unwrap();
 
@@ -100,7 +100,7 @@ fn main() {
     let time_out_rand = measure_avg!(NUM_RUNS, mem_access_rand(&a));
     print!("{} ", time_out_rand);    
     io::stdout().flush().unwrap();
-    /*                
+                 
     let ocall_handler = | nr, p1, _p2, _p3, _p4 | {
         //println!("Usercall: nr={} size={} {} {} {}", nr, p1, p2, p3, p4)
         match nr {
@@ -114,12 +114,13 @@ fn main() {
     //ecall(&mut mapping, &ocall_handler, Ecalls::LogInit as u64, l.get_raw_ptr(), 0, 0, 0);
   
     // no-op measurement
-    //let time_avg_ecall_noop = measure_avg!(NOOP_RUNS, ecall(&mut mapping, &ocall_handler, Ecalls::NoOp as u64, 0, 0, 0, 0));
+    let time_avg_ecall_noop = measure_avg!(NOOP_RUNS, ecall(&mut mapping, &ocall_handler, Ecalls::NoOp as u64, 0, 0, 0, 0));
     //println!("time_avg_ecall_noop={}", time_avg_ecall_noop);
         
     // init encl array
     let a_ptr = ecall(&mut mapping, &ocall_handler, Ecalls::VecInit as u64, 0, mem_size as u64, 0, 0);
     
+    /*
     let time_encl_seq_bytewise: u64 = measure_avg!(NUM_RUNS, ecall(&mut mapping, &ocall_handler, Ecalls::MemAccessSeqBytewise as u64, a_ptr, mem_size as u64, 0, 0)).saturating_sub(time_avg_ecall_noop);
     print!("{} ", time_encl_seq_bytewise);
     io::stdout().flush().unwrap();
@@ -127,9 +128,10 @@ fn main() {
     let time_encl_seq_pagewise: u64 = measure_avg!(NUM_RUNS, ecall(&mut mapping, &ocall_handler, Ecalls::MemAccessSeqPagewise as u64, a_ptr, mem_size as u64, 0, 0)).saturating_sub(time_avg_ecall_noop);
     print!("{} ", time_encl_seq_pagewise);
     io::stdout().flush().unwrap();
+    */
     
     let time_encl_rand_bytewise: u64 = measure_avg!(NUM_RUNS, ecall(&mut mapping, &ocall_handler, Ecalls::MemAccessRandBytewise as u64, a_ptr, mem_size as u64, 0, 0)).saturating_sub(time_avg_ecall_noop);
     println!("{}", time_encl_rand_bytewise);    
-    */  
+  
     drop(h);
 }
