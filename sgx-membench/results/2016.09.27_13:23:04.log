@@ -1,0 +1,12 @@
+# mem_size=1 MiB NUM_RUNS=3
+# mem_size out_rand_bytewise enc_rand_bytewise
+1048576 957 22377
+# mem_size=92 MiB NUM_RUNS=3
+# mem_size out_rand_bytewise enc_rand_bytewise
+96468992 5868 96967
+# mem_size=106 MiB NUM_RUNS=3
+# mem_size out_rand_bytewise enc_rand_bytewise
+111149056 5913 517598
+# mem_size=255 MiB NUM_RUNS=3
+# mem_size out_rand_bytewise enc_rand_bytewise
+267386880 6123 2332648
